@@ -20,6 +20,9 @@ public class MyRunner implements CommandLineRunner {
 
 	@Override
 	public void run(String... args) throws Exception {
+		
+		/*I want to use JPA Criteria API, some thing like below with RIGHT JOIN - hoping it works in Hibernate 6.x. A try is worth it given my project requirement. */
+		
 		/*
 		em.getCriteriaBuilder();
 		CriteriaBuilder cb = em.getCriteriaBuilder();
