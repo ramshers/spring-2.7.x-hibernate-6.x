@@ -28,8 +28,9 @@ public class MyRunner implements CommandLineRunner {
 		CriteriaBuilder cb = em.getCriteriaBuilder();
         CriteriaQuery<Tuple> query = cb.createQuery(Tuple.class);
         Root<Packages> root = query.from(Packages.class);
+        Join rightJoin = root.join("plist", JoinType.RIGHT);
         
-        query.where(cb.between(root.get("packageId"), 1, 10));
+        query.where(cb.between(rightJoin.get("someId"), 1, 10));
         
         List<Tuple> result = em.createQuery(query).getResultList();
         
